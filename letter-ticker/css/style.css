@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Six+Caps);
+body {
+  font-size: 16px;
+  padding: 30px;
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+}
+
+.separator {
+  display: inline-block;
+  font-size: 2em;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.ticker {
+  display: none;
+  width: 100%;
+  margin: 10px;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 4em;
+  line-height: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  -webkit-transform: scale(1, 0.8);
+          transform: scale(1, 0.8);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+.ticker.js-show {
+  display: inline-block;
+}
+
+@media (min-width: 850px) {
+  body {
+    justify-content: center;
+  }
+
+  .separator {
+    padding: 0.85em 0 0 0;
+  }
+
+  .ticker {
+    width: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .separator {
+    font-size: 3em;
+  }
+
+  .ticker {
+    font-size: 6em;
+    line-height: 1em;
+  }
+}
