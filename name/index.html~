@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title> Name </title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="container">
+  <div class="title move">
+    <h1>ROHIT</h1>
+  </div>
+</div>
+  
+  
+
+</body>
+
+</html>

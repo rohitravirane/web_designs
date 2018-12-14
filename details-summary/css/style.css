@@ -1,0 +1,174 @@
+:root {
+  --w: 20em; 
+  --easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@media screen and (max-height: 35em) {
+  :root {
+    --w: 50vh;  
+  }  
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+[window] {
+  width: var(--w);
+  height: calc(var(--w) *1.6);
+  min-width: 15em;
+  min-height: 20em;
+  position: relative;
+
+  /* just for demo */
+  background: #444;
+  box-shadow: 0 0 20px rgba(125, 125, 125, .2);
+  overflow: hidden;
+}
+
+@-webkit-keyframes slide-in {
+  0% { -webkit-transform: translate3d(10%, 10%, 0); transform: translate3d(10%, 10%, 0); }
+  100% { -webkit-transform: translate3d(1em, 1em, 0); transform: translate3d(1em, 1em, 0); }
+}
+
+@keyframes slide-in {
+  0% { -webkit-transform: translate3d(10%, 10%, 0); transform: translate3d(10%, 10%, 0); }
+  100% { -webkit-transform: translate3d(1em, 1em, 0); transform: translate3d(1em, 1em, 0); }
+}
+
+@-webkit-keyframes clip-in {
+  from {
+    -webkit-transform: translate3d(1em, 100%, 0);
+            transform: translate3d(1em, 100%, 0);
+    -webkit-clip-path: polygon(0 0, -10% 0, -10% 100%, 0 100%);
+            clip-path: polygon(0 0, -10% 0, -10% 100%, 0 100%);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+  }
+}
+
+@keyframes clip-in {
+  from {
+    -webkit-transform: translate3d(1em, 100%, 0);
+            transform: translate3d(1em, 100%, 0);
+    -webkit-clip-path: polygon(0 0, -10% 0, -10% 100%, 0 100%);
+            clip-path: polygon(0 0, -10% 0, -10% 100%, 0 100%);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+  }
+}
+
+.main {
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; height: 100%;
+  background: #fff;
+  transition: .4s var(--easing); 
+}
+
+.main h1 {
+  margin: -2em 0 1em 0;
+  min-width: 68%;
+}
+
+.main[open] {
+  -webkit-transform: scale(.9) translate3d(-.5em, -.5em, 0);
+          transform: scale(.9) translate3d(-.5em, -.5em, 0);
+}
+
+.main details {
+  display: block;
+  width: 68%;
+}
+
+.main details + details {
+  margin-top: 5px;
+}
+
+.main details summary {
+  padding: .5em 1em;
+  background: #fafafa;
+  color: #333;
+  cursor: pointer;
+  transition: .4s var(--easing); 
+  outline: none;
+}
+
+.main details:not([open]) summary:focus {
+  box-shadow: inset 0 0 0 1px #9bdeff;
+  color: #000;
+}
+
+.main details summary::-webkit-details-marker {
+  opacity: .5;
+}
+
+.main details:not([open]):hover summary::-webkit-details-marker,
+.main details:not([open]) summary:focus::-webkit-details-marker,
+.main details[open] summary::-webkit-details-marker {
+  opacity: 1;
+}
+
+.main details:not([open]):hover summary {
+  background: #E3F5FE;
+  color: #000;
+}
+
+.main details[open] summary {
+  background: #E3F5FE;
+  -webkit-animation: clip-in .3s;
+          animation: clip-in .3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  min-width: 61.8%;
+  will-change: transform;
+}
+
+.main details summary ~ .detail-body {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 2em 2em;
+  background: #fff;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  box-shadow: 0 0 20px rgba(125, 125, 125, .5);
+  -webkit-animation: slide-in .6s var(--easing);
+          animation: slide-in .6s var(--easing); 
+  -webkit-animation-fill-mode: both; 
+          animation-fill-mode: both;
+  will-change: transform;
+  z-index: 10;
+  overflow: auto;
+}
+
+.main details summary ~ .detail-body p {
+  line-height: 1.6;
+  margin-top: 2em;
+}
+
+.main details[open] summary {
+  position: absolute;
+  z-index: 99;
+  top: 1em;
+  left: 1em;
+}

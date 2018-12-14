@@ -1,0 +1,12 @@
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+  display: flex;
+  height: 100vh;
+}
+#menu {
+  margin: auto;
+  width: 300px;
+  cursor: pointer;
+}

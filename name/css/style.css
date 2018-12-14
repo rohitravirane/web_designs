@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:500);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+:root {
+  --c: 255,255,255;
+  --bg: 0,0,255;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Ubuntu";
+}
+body {
+  margin: 0;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(var(--bg));
+}
+
+.title:hover {
+  animation: rotate cubic-bezier(0.27, -0.25, 0.76, 1.24) 400ms infinite forwards;
+}
+.title {
+  display-items: center;
+  font-size: 4em;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(var(--bg), 1);
+  text-shadow: 6px 5px 0px rgba(var(--c), 0.6);
+}
+
+.move {
+  animation: rotate cubic-bezier(0.27, -0.25, 0.76, 1.24) 400ms 4 forwards;
+}
+
+@keyframes rotate {
+  0% {
+    text-shadow: 0px -5px 0px rgba(var(--c), 0.6);
+  }
+  25% {
+    text-shadow: 5px 0px 0px rgba(var(--c), 0.6);
+  }
+  50% {
+    text-shadow: 0px 5px 0px rgba(var(--c), 0.6);
+  }
+  75% {
+    text-shadow: -5px 0px 0px rgba(var(--c), 0.6);
+  }
+  100% {
+    text-shadow: 0px -5px 0px rgba(var(--c), 0.6);
+  }
+}

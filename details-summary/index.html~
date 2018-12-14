@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!-- Auther : Rohit Rane. -->
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Details</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div window>
+  <div class="main">
+    <h1>Friends</h1>
+    <details>
+      <summary>Rohit</summary>
+      <div class="detail-body">
+        <p> 
+        My name is Rohit.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>Sanjiv</summary>
+      <div class="detail-body">
+        <p>
+          My name is Sanjiv.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>Arfat</summary>
+      <div class="detail-body">
+        <p>
+          My name is Arfat.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>Nilesh</summary>
+      <div class="detail-body">
+        <p>
+          My name is Nilesh.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
